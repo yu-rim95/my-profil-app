@@ -10,6 +10,15 @@ function App() {
   useEffect(() => {
     setTimeout(() => {
       setIsLoading(false);
+      console.log(
+        `🌟   .  *     .        🌙
+        최 * . 🪐
+        *   .        .  유    *
+          .     *🚀 .      ✨    .
+        ☄    *  림 (☞ﾟヮﾟ)☞  https://github.com/yu-rim95
+        `
+      );
+      
     }, 3500);
   }, []);
 

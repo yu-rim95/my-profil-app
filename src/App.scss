@@ -237,18 +237,50 @@ $shooting-time: 4000ms;
   background: #000;
   overflow: hidden;
   position: relative;
-  .bg-01{
-    background: url('../public/images/profil_bg01.png') no-repeat; 
-    max-width: 1120px;
-    height: 100%;
-    margin: 0 auto;
+  .flow-text {
+    display: flex;
+    flex: 0 0 auto;
+    white-space: nowrap;
+    overflow: hidden;
+    transition: 0.3s;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #f3f2ef;
+  
+    &:hover {
+      color: #f1f0f0;
+  
+      .flow-wrap {
+        animation-play-state: paused;
+        cursor: pointer;
+        a{
+          color: #fff;
+        }
+      }
+    }
   }
+  
+  .flow-wrap {
+    animation: textLoop 10s linear infinite;
+    padding-right: 1.4881vw;
+  }
+  
+  @keyframes textLoop {
+    0% {
+      transform: translate3d(0, 0, 0);
+    }
+    100% {
+      transform: translate3d(-100%, 0, 0);
+    }
+  }
+  
+  
   .shooting_star {
     position: absolute;
     left: 0;
     top: 50%;
     height: 2px;
-    background: linear-gradient(-45deg, rgba(218, 168, 187, 0.35), rgba(0, 0, 255, 0));
+    background: linear-gradient(-45deg, rgba(93, 95, 214, 0.35), rgba(0, 0, 255, 0));
     border-radius: 999px;
     filter: drop-shadow(0 0 6px rgb(233, 241, 158));
     animation:
@@ -265,6 +297,14 @@ $shooting-time: 4000ms;
     }
   }
 
+  @keyframes scroll {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-200%); // 수정된 부분
+    }
+  }
 
 
 }
@@ -289,14 +329,5 @@ $shooting-time: 4000ms;
   }
 }
 
-@keyframes shooting {
-  0% {
-    transform: translateX(0);
-  }
-  
-  100% {
-    transform: translateX(100%);
-  }
-}
 
 /*프로필 페이지 --- END ---*/
